@@ -119,8 +119,8 @@ export const PRODUCTS: Product[] = [
     price: 108,
     collection: 'federal-reserve',
     category: 'Bottoms',
-    image: '/products/smk-sweatpants.png',
-    images: ['/products/smk-sweatpants.png'],
+    image: '/products/smk-sweatpants.jpg',
+    images: ['/products/smk-sweatpants.jpg'],
     colors: ['Black'],
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
     description:
