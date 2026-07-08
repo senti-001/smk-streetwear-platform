@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { ProductCard } from '@/components/commerce/product-card'
 import { Newsletter } from '@/components/marketing/newsletter'
-import { COLLECTIONS, PRODUCTS } from '@/lib/products'
+import { COLLECTIONS, PRODUCTS, ARTWORKS } from '@/lib/products'
 import { buttonVariants } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 
@@ -27,14 +27,14 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-t from-secondary/85 via-secondary/20 to-transparent" />
           <div className="relative mx-auto w-full max-w-7xl px-4 pb-14">
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-primary-foreground/90">
-              Drop 004 &middot; Live Now
+              Drop 005 &middot; Live Now
             </p>
             <h1 className="max-w-4xl font-display text-6xl uppercase leading-[0.85] text-background text-balance sm:text-7xl md:text-8xl lg:text-9xl">
-              Wear the Crown
+              Self Made King
             </h1>
             <p className="mt-5 max-w-md text-sm leading-relaxed text-background/80">
               Premium Orange County streetwear built for those who made it
-              themselves. Heavyweight staples, numbered limited runs.
+              themselves. Heavyweight staples, smoke gothic lettering, limited runs. 949.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
@@ -87,7 +87,7 @@ export default function HomePage() {
         <div className="relative flex min-h-[60vh] items-center">
           <Image
             src="/collection-banner.png"
-            alt="Self Made King collection"
+            alt="Federal Reserve collection"
             fill
             sizes="100vw"
             className="object-cover"
@@ -98,14 +98,14 @@ export default function HomePage() {
               Featured Collection
             </p>
             <h2 className="font-display text-5xl uppercase leading-[0.9] text-background text-balance sm:text-7xl">
-              Self Made King
+              Federal Reserve
             </h2>
             <p className="mx-auto mt-4 max-w-lg text-sm leading-relaxed text-background/80">
-              The flagship line. Premium pieces carrying the crown for those who
-              built it themselves.
+              Money-inspired graphics and the iconic $100 bill artwork.
+              Hundred dollar energy on heavyweight fleece. Stack it up. IGBBMN.
             </p>
             <Link
-              href="/collections/self-made-king"
+              href="/collections/federal-reserve"
               className={cn(
                 buttonVariants({ size: 'lg' }),
                 'mt-8 inline-flex h-12 px-8 text-sm',
@@ -145,8 +145,48 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Brand story */}
+      {/* Art section */}
       <section className="border-y border-border bg-card">
+        <div className="mx-auto max-w-7xl px-4 py-16">
+          <div className="mb-8">
+            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.24em] text-primary">
+              The art
+            </p>
+            <h2 className="font-display text-4xl uppercase leading-none sm:text-5xl">
+              SMK Originals
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            {ARTWORKS.map((art) => (
+              <div
+                key={art.id}
+                className="group relative overflow-hidden rounded-sm border border-border bg-secondary/40 transition-colors hover:border-primary"
+              >
+                <div className="relative aspect-[16/10] w-full overflow-hidden">
+                  <Image
+                    src={art.image}
+                    alt={art.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-contain p-4 transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-5">
+                  <h3 className="font-display text-2xl uppercase leading-none transition-colors group-hover:text-primary">
+                    {art.title}
+                  </h3>
+                  <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+                    {art.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Brand story */}
+      <section className="bg-background">
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-16 md:grid-cols-2">
           <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
             <Image
@@ -165,10 +205,10 @@ export default function HomePage() {
               Built in the 949
             </h2>
             <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
-              SMK started in a garage in South Orange County with one idea: make the
+              SMK started in a garage in Orange County with one idea: make the
               kind of heavyweight, no-compromise streetwear we actually wanted to
               wear. No fast fashion, no filler. Every piece is designed, sampled, and
-              dropped in limited runs.
+              dropped in limited runs. IGBBMN.
             </p>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
               Self Made King is a mindset. Wear the crown.

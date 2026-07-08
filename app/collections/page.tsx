@@ -5,7 +5,7 @@ import { COLLECTIONS, PRODUCTS, productsByCollection } from '@/lib/products'
 
 export const metadata: Metadata = {
   title: 'Collections | SMK — Self Made King',
-  description: 'Explore SMK collections: 949 Made, Self Made King, South OC, and more.',
+  description: 'Explore SMK collections: Self Made King, Federal Reserve, Smoke Series, 949 Essentials, and more.',
 }
 
 export default function CollectionsPage() {

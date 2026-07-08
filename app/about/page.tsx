@@ -50,7 +50,7 @@ export default function AboutPage() {
 
         <div className="mt-12 grid grid-cols-3 gap-6 border-t border-border pt-10 text-center">
           <div>
-            <p className="font-display text-4xl text-primary">04</p>
+            <p className="font-display text-4xl text-primary">05</p>
             <p className="mt-1 text-xs uppercase tracking-[0.14em] text-muted-foreground">
               Drops released
             </p>

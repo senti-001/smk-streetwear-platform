@@ -23,12 +23,12 @@ const anton = Anton({
 export const metadata: Metadata = {
   title: 'SMK — Self Made King | Orange County Streetwear',
   description:
-    'SMK (Self Made King) — premium Orange County streetwear. Drop-based collections built for the 949. 949 Made. Self Made King. South OC.',
+    'SMK (Self Made King) — premium Orange County streetwear. Drop-based collections built in the 949. Heavyweight, gothic, no compromise. IGBBMN.',
   generator: 'v0.app',
   openGraph: {
     title: 'SMK — Self Made King | Orange County Streetwear',
     description:
-      'Premium Orange County streetwear. Drop-based collections built for the 949.',
+      'Premium Orange County streetwear. Heavyweight drops built in the 949. Self Made King. IGBBMN.',
     type: 'website',
   },
   icons: {

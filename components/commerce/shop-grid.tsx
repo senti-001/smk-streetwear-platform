@@ -16,6 +16,7 @@ const CATEGORIES: Product['category'][] = [
   'Bottoms',
   'Outerwear',
   'Headwear',
+  'Womens',
 ]
 
 type SortKey = 'featured' | 'new' | 'price-asc' | 'price-desc'
