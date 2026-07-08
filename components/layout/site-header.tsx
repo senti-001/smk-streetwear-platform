@@ -5,13 +5,11 @@ import Image from 'next/image'
 import { useState } from 'react'
 import { Menu, Search, ShoppingBag, User, X } from 'lucide-react'
 import { useCart } from '@/components/cart/cart-provider'
-import { COLLECTIONS } from '@/lib/products'
 import { cn } from '@/lib/utils'
 
 const NAV = [
   { label: 'Shop All', href: '/shop' },
   { label: 'New', href: '/shop?sort=new' },
-  { label: 'Collections', href: '/collections' },
   { label: 'About', href: '/about' },
 ]
 
@@ -135,23 +133,7 @@ export function SiteHeader() {
                 </Link>
               ))}
             </nav>
-            <div className="mt-6">
-              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-                Collections
-              </p>
-              <div className="flex flex-col gap-2">
-                {COLLECTIONS.map((c) => (
-                  <Link
-                    key={c.slug}
-                    href={`/collections/${c.slug}`}
-                    onClick={() => setMobileOpen(false)}
-                    className="text-sm text-foreground hover:text-primary"
-                  >
-                    {c.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
+
             <Link
               href="/account"
               onClick={() => setMobileOpen(false)}

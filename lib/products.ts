@@ -205,6 +205,52 @@ export const PRODUCTS: Product[] = [
     inventory: 50,
     featured: true,
   },
+  {
+    id: 'p15',
+    slug: 'self-made-king-script-tee',
+    name: 'Self Made King Script Tee',
+    price: 52,
+    collection: 'self-made-king',
+    category: 'Tops',
+    image: '/products/self-made-king-script-tee.png',
+    images: ['/products/self-made-king-script-tee.png'],
+    colors: ['Black'],
+    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    description:
+      'Classic heavyweight tee with elegant script lettering at the neckline. Understated luxury for the modern king.',
+    details: [
+      '240gsm ring-spun combed cotton',
+      'Boxy, structured fit',
+      'Neckline script print',
+      'Garment-dyed, pre-shrunk',
+    ],
+    status: 'new',
+    inventory: 45,
+    featured: true,
+  },
+  {
+    id: 'p16',
+    slug: 'gorilla-king-tee',
+    name: 'Gorilla King Tee',
+    price: 58,
+    collection: 'self-made-king',
+    category: 'Tops',
+    image: '/products/gorilla-king-tee.png',
+    images: ['/products/gorilla-king-tee.png'],
+    colors: ['Black'],
+    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    description:
+      'The Gorilla King. Featuring a crowned gorilla in oil-painting style and graffiti lettering. Pure power.',
+    details: [
+      '240gsm ring-spun combed cotton',
+      'Boxy, structured fit',
+      'Large front graphic',
+      'Garment-dyed, pre-shrunk',
+    ],
+    status: 'new',
+    inventory: 40,
+    featured: true,
+  },
 
 
   // ── Womens ──
