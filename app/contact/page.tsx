@@ -1,7 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import { Mail, Instagram } from 'lucide-react'
+import { Mail } from 'lucide-react'
+import { InstagramIcon } from '@/components/icons/instagram-icon'
 import { Button } from '@/components/ui/button'
 
 export default function ContactPage() {
@@ -35,7 +36,7 @@ export default function ContactPage() {
           rel="noreferrer"
           className="inline-flex items-center gap-2 hover:text-primary"
         >
-          <Instagram className="size-4 text-primary" /> @smk.streetwear
+          <InstagramIcon className="size-4 text-primary" /> @smk.streetwear
         </a>
       </div>
 

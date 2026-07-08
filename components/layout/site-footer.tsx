@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { Instagram } from 'lucide-react'
+import { InstagramIcon } from '@/components/icons/instagram-icon'
 import { COLLECTIONS } from '@/lib/products'
 
 const HELP_LINKS = [
@@ -100,7 +100,7 @@ export function SiteFooter() {
               rel="noreferrer"
               className="inline-flex items-center gap-2 text-sm text-secondary-foreground/80 transition-colors hover:text-primary"
             >
-              <Instagram className="size-5" /> @smk.streetwear
+              <InstagramIcon className="size-5" /> @smk.streetwear
             </a>
           </div>
         </div>
