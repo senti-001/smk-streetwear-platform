@@ -1,36 +1,44 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
+import { Anton, Inter } from 'next/font/google'
 import './globals.css'
+import { CartProvider } from '@/components/cart/cart-provider'
+import { SiteHeader } from '@/components/layout/site-header'
+import { SiteFooter } from '@/components/layout/site-footer'
+import { CartDrawer } from '@/components/cart/cart-drawer'
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+})
+
+const anton = Anton({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-anton',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
+  title: 'SMK — Self Made King | Orange County Streetwear',
+  description:
+    'SMK (Self Made King) — premium Orange County streetwear. Drop-based collections built for the 949. 949 Made. Self Made King. South OC.',
   generator: 'v0.app',
+  openGraph: {
+    title: 'SMK — Self Made King | Orange County Streetwear',
+    description:
+      'Premium Orange County streetwear. Drop-based collections built for the 949.',
+    type: 'website',
+  },
   icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
+    icon: [{ url: '/smk-logo.png', type: 'image/png' }],
   },
 }
 
 export const viewport: Viewport = {
-  colorScheme: 'light dark',
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: 'white' },
-    { media: '(prefers-color-scheme: dark)', color: 'black' },
-  ],
+  colorScheme: 'light',
+  themeColor: '#d97316',
 }
 
 export default function RootLayout({
@@ -39,9 +47,14 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className="antialiased">
-        {children}
+    <html lang="en" className={`${inter.variable} ${anton.variable} bg-background`}>
+      <body className="font-sans antialiased">
+        <CartProvider>
+          <SiteHeader />
+          <main className="min-h-screen">{children}</main>
+          <SiteFooter />
+          <CartDrawer />
+        </CartProvider>
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
