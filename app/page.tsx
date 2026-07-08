@@ -7,7 +7,7 @@ import { PRODUCTS, ARTWORKS } from '@/lib/products'
 
 export default function HomePage() {
   const newest = PRODUCTS.filter((p) => p.status === 'new').slice(0, 4)
-  const featured = PRODUCTS.filter((p) => p.featured).slice(0, 4)
+  const featured = PRODUCTS.filter((p) => p.featured && !newest.some(n => n.id === p.id)).reverse().slice(0, 4)
 
   return (
     <>
