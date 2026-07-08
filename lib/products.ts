@@ -111,29 +111,7 @@ export const PRODUCTS: Product[] = [
   },
 
   // ── Federal Reserve ──
-  {
-    id: 'p2',
-    slug: 'federal-reserve-hoodie',
-    name: 'Federal Reserve Hoodie',
-    price: 148,
-    collection: 'federal-reserve',
-    category: 'Fleece',
-    image: '/products/smk-hundred-hoodie.png',
-    images: ['/products/smk-hundred-hoodie.png', '/products/smk-black-hoodie.png'],
-    colors: ['Black'],
-    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-    description:
-      'The statement hoodie. 500gsm heavyweight pullover with the iconic SMK $100 bill graphic on the back — Benjamin Franklin replaced with the bandana portrait. Front features tonal SMK embroidery. Series 949.',
-    details: [
-      '500gsm brushed-back fleece',
-      'Full $100 bill back graphic',
-      'Double-lined hood',
-      'Metal-tipped drawcords',
-    ],
-    status: 'new',
-    inventory: 30,
-    featured: true,
-  },
+
   {
     id: 'p3',
     slug: 'federal-reserve-sweatpants',
@@ -159,29 +137,7 @@ export const PRODUCTS: Product[] = [
   },
 
   // ── Self Made King ──
-  {
-    id: 'p4',
-    slug: 'self-made-king-heavyweight-hoodie',
-    name: 'Self Made King Hoodie',
-    price: 138,
-    collection: 'self-made-king',
-    category: 'Fleece',
-    image: '/products/smk-black-hoodie.png',
-    images: ['/products/smk-black-hoodie.png'],
-    colors: ['Black', 'Washed Black'],
-    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-    description:
-      'The crown hoodie. 500gsm pullover with gothic SMK lettering in chrome smoke across the chest. Double-lined hood, heavy drawcords, oversized relaxed fit built to last.',
-    details: [
-      '500gsm brushed-back fleece',
-      'Chrome smoke chest graphic',
-      'Double-lined hood',
-      'Metal-tipped drawcords',
-    ],
-    status: 'core',
-    inventory: 88,
-    featured: true,
-  },
+
   {
     id: 'p5',
     slug: 'king-shit-tee',
@@ -279,28 +235,7 @@ export const PRODUCTS: Product[] = [
   },
 
   // ── 949 Essentials ──
-  {
-    id: 'p7',
-    slug: '949-heavyweight-tee',
-    name: '949 Heavyweight Tee',
-    price: 48,
-    collection: '949-essentials',
-    category: 'Tops',
-    image: '/products/king-long-sleeve.png',
-    images: ['/products/king-long-sleeve.png'],
-    colors: ['Black', 'Washed Black'],
-    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-    description:
-      'A blacked-out essential. Heavyweight long sleeve with minimal SMK branding on the sleeve and back neck. The everyday staple for the 949.',
-    details: [
-      '220gsm ring-spun cotton',
-      'Boxy fit',
-      'Sleeve-hit embroidery',
-      'Back neck label',
-    ],
-    status: 'core',
-    inventory: 72,
-  },
+
 
 
   // ── Accessories ──
