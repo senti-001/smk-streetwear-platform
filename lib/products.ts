@@ -85,30 +85,6 @@ export const COLLECTIONS: Collection[] = [
 ]
 
 export const PRODUCTS: Product[] = [
-  // ── Smoke Series ──
-  {
-    id: 'p1',
-    slug: 'smk-smoke-gothic-tee',
-    name: 'SMK Smoke Gothic Tee',
-    price: 58,
-    collection: 'smoke-series',
-    category: 'Tops',
-    image: '/products/smk-smoke-tee.png',
-    images: ['/products/smk-smoke-tee.png'],
-    colors: ['Black'],
-    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-    description:
-      'The signature piece. A 240gsm heavyweight tee with the SMK gothic old-english lettering in chrome smoke effect across the chest. Garment-dyed, boxy oversized fit. The one that started it all.',
-    details: [
-      '240gsm ring-spun combed cotton',
-      'Boxy oversized fit',
-      'Chrome smoke gothic chest print',
-      'Garment-dyed, pre-shrunk',
-    ],
-    status: 'new',
-    inventory: 42,
-    featured: true,
-  },
 
   // ── Federal Reserve ──
 
@@ -209,28 +185,27 @@ export const PRODUCTS: Product[] = [
   },
 
 
-  // ── Womens ──
   {
-    id: 'p6',
-    slug: 'smk-crop-tee',
-    name: 'SMK Crop Tee',
-    price: 48,
-    collection: 'smoke-series',
-    category: 'Womens',
-    image: '/products/smk-crop-tee.png',
-    images: ['/products/smk-crop-tee.png'],
+    id: 'p18',
+    slug: 'smk-orange-county-tee',
+    name: 'SMK Orange County Tee',
+    price: 52,
+    collection: '949-essentials',
+    category: 'Tops',
+    image: '/products/smk-orange-county-tee.png',
+    images: ['/products/smk-orange-county-tee.png'],
     colors: ['Black'],
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
     description:
-      'Heavyweight cropped boxy tee with bold SMK block lettering and "Orange County, CA" print. Cut at the waist, relaxed fit. Made for the queens.',
+      'Classic Orange County streetwear. Heavyweight black tee featuring the SMK crown and shield graphic in bold orange.',
     details: [
-      '200gsm ring-spun cotton',
-      'Cropped boxy fit',
-      'SMK chest print',
-      'Garment-dyed',
+      '240gsm ring-spun combed cotton',
+      'Boxy, structured fit',
+      'Orange County Shield graphic',
+      'Garment-dyed, pre-shrunk',
     ],
     status: 'new',
-    inventory: 45,
+    inventory: 60,
     featured: true,
   },
 
@@ -276,7 +251,7 @@ export const PRODUCTS: Product[] = [
     category: 'Fleece',
     image: '/products/cocaine-breakfast-hoodie.png',
     images: ['/products/cocaine-breakfast-hoodie.png'],
-    colors: ['White'],
+    colors: ['White', 'Black'],
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
     description:
       'Start the day right. The Cocaine Breakfast hoodie features a wild squirrel graphic. Pure energy in limited numbers.',
@@ -293,25 +268,48 @@ export const PRODUCTS: Product[] = [
 
   {
     id: 'p14',
-    slug: 'igbbmn-white-sweatshirt',
-    name: 'IGBBMN White Sweatshirt',
-    price: 125,
+    slug: 'igbbmn-tee',
+    name: 'IGBBMN Tee',
+    price: 55,
     collection: 'federal-reserve',
-    category: 'Fleece',
-    image: '/products/igbbmn-front-hq.png',
-    images: ['/products/igbbmn-front-hq.png', '/artwork/federal-reserve-hundred.png'],
-    colors: ['White', 'Bone'],
+    category: 'Tops',
+    image: '/products/igbbmn-tee.png',
+    images: ['/products/igbbmn-tee.png', '/artwork/federal-reserve-hundred.png'],
+    colors: ['White', 'Black'],
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
     description:
-      'Heavyweight white crewneck sweatshirt featuring the iconic IGBBMN $100 bill artwork bold across the front. Raw dark energy.',
+      'Heavyweight crewneck tee featuring the iconic IGBBMN $100 bill artwork bold across the front. Raw dark energy.',
     details: [
-      '500gsm brushed-back fleece',
-      'Oversized drop-shoulder fit',
-      'Full back graphic print',
-      'Minimal front branding',
+      '240gsm ring-spun combed cotton',
+      'Boxy oversized fit',
+      'Full front graphic print',
+      'Garment-dyed, pre-shrunk',
     ],
     status: 'new',
     inventory: 45,
+    featured: true,
+  },
+  {
+    id: 'p17',
+    slug: 'smk-smoke-stacks-tee',
+    name: 'SMK Smoke & Stacks Tee',
+    price: 65,
+    collection: 'self-made-king',
+    category: 'Tops',
+    image: '/products/smk-smoke-stacks-tee.png',
+    images: ['/products/smk-smoke-stacks-tee.png'],
+    colors: ['Black'],
+    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    description:
+      'The Smoke & Stacks Lifestyle tee. Featuring the iconic photo of raw SMK energy. Heavyweight black blank, premium print.',
+    details: [
+      '240gsm ring-spun combed cotton',
+      'Boxy oversized fit',
+      'High-resolution photo print',
+      'Garment-dyed, pre-shrunk',
+    ],
+    status: 'new',
+    inventory: 50,
     featured: true,
   },
 ]
@@ -330,9 +328,9 @@ export const ARTWORKS: Artwork[] = [
     id: 'art-2',
     slug: 'self-made-king-seal',
     title: 'Self Made King Seal',
-    image: '/artwork/self-made-king-seal.png',
+    image: '/artwork/self-made-king-seal-blue.jpg',
     description:
-      'The Self Made King seal. Orange County. Red bandana portrait with SMK OC chest tattoos in vintage engraving style.',
+      'The Self Made King seal. Orange County. Blue bandana portrait with SMK OC chest tattoos in vintage engraving style.',
   },
   {
     id: 'art-3',
@@ -341,6 +339,14 @@ export const ARTWORKS: Artwork[] = [
     image: '/artwork/smk-crown-hundred.jpg',
     description:
       'SMK Self Made King crown logo over Benjamin Franklin in a bandana. The $100 bill with the cash roll. Smoke and dark energy.',
+  },
+  {
+    id: 'art-4',
+    slug: 'smoke-and-stacks',
+    title: 'Smoke and Stacks',
+    image: '/artwork/smk-smoke-stacks.jpg',
+    description:
+      'The pure essence of Self Made King. Chrome smoke gothic logo over heavy stacks of hundreds.',
   },
 ]
 
