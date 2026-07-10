@@ -308,7 +308,7 @@ export const ARTWORKS: Artwork[] = [
     id: 'art-2',
     slug: 'self-made-king-seal',
     title: 'Self Made King Seal',
-    image: '/artwork/self-made-king-seal-blue.jpg',
+    image: '/artwork/self-made-king-seal-blue.png',
     description:
       'The Self Made King seal. Orange County. Blue bandana portrait with SMK OC chest tattoos in vintage engraving style.',
   },
