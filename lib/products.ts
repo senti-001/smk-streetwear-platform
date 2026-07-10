@@ -85,56 +85,6 @@ export const COLLECTIONS: Collection[] = [
 ]
 
 export const PRODUCTS: Product[] = [
-  // ── Smoke Series ──
-  {
-    id: 'p19',
-    slug: 'smk-chrome-logo-tee',
-    name: 'SMK Chrome Logo Tee',
-    price: 55,
-    collection: 'smoke-series',
-    category: 'Tops',
-    image: '/products/smk-chrome-tee.png',
-    images: ['/products/smk-chrome-tee.png'],
-    colors: ['Black'],
-    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-    description:
-      'The signature piece. A 240gsm heavyweight tee with the SMK gothic old-english lettering in chrome smoke effect across the chest. Garment-dyed, boxy oversized fit.',
-    details: [
-      '240gsm ring-spun combed cotton',
-      'Boxy oversized fit',
-      'Chrome gothic chest print',
-      'Garment-dyed, pre-shrunk',
-    ],
-    status: 'new',
-    inventory: 42,
-    featured: true,
-  },
-  // ── Federal Reserve ──
-
-  {
-    id: 'p3',
-    slug: 'federal-reserve-sweatpants',
-    name: 'Federal Reserve Sweatpants',
-    price: 108,
-    collection: 'federal-reserve',
-    category: 'Bottoms',
-    image: '/products/smk-sweatpants.jpg',
-    images: ['/products/smk-sweatpants.jpg'],
-    colors: ['Black'],
-    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-    description:
-      'Heavyweight fleece sweatpants with SMK branding on the thigh. Tapered leg, deep pockets, drawcord waist. Match with the Federal Reserve Hoodie for the full set.',
-    details: [
-      '450gsm brushed fleece',
-      'Tapered leg',
-      'Elastic + drawcord waist',
-      'SMK thigh embroidery',
-    ],
-    status: 'new',
-    inventory: 54,
-    featured: true,
-  },
-
   // ── Self Made King ──
 
   {
