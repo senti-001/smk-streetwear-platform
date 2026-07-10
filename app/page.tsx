@@ -6,8 +6,7 @@ import { Newsletter } from '@/components/marketing/newsletter'
 import { PRODUCTS, ARTWORKS } from '@/lib/products'
 
 export default function HomePage() {
-  const newest = PRODUCTS.filter((p) => p.status === 'new').slice(0, 4)
-  const featured = PRODUCTS.filter((p) => p.featured && !newest.some(n => n.id === p.id)).reverse().slice(0, 4)
+  const products = PRODUCTS
 
   return (
     <>
@@ -52,43 +51,26 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Newest drop */}
+      {/* Latest Gear */}
       <section className="mx-auto max-w-7xl px-4 py-16">
         <div className="mb-8 flex items-end justify-between">
           <div>
             <p className="mb-2 text-xs font-semibold uppercase tracking-[0.24em] text-primary">
-              Just dropped
+              All Gear
             </p>
             <h2 className="font-display text-4xl uppercase leading-none sm:text-5xl">
-              Newest Drop
+              Latest Drops
             </h2>
           </div>
           <Link
-            href="/shop?sort=new"
+            href="/shop"
             className="hidden items-center gap-1 text-xs font-semibold uppercase tracking-[0.18em] hover:text-primary sm:flex"
           >
-            View all <ArrowRight className="size-4" />
+            Shop all <ArrowRight className="size-4" />
           </Link>
         </div>
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
-          {newest.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
-      </section>
-
-      {/* Trending */}
-      <section className="mx-auto max-w-7xl px-4 py-16">
-        <div className="mb-8">
-          <p className="mb-2 text-xs font-semibold uppercase tracking-[0.24em] text-primary">
-            Most wanted
-          </p>
-          <h2 className="font-display text-4xl uppercase leading-none sm:text-5xl">
-            Trending Now
-          </h2>
-        </div>
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
-          {featured.map((product) => (
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 lg:gap-6">
+          {products.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
