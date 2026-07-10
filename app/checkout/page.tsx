@@ -1,15 +1,21 @@
 'use client'
 
+import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Lock } from 'lucide-react'
+import { Lock, Loader2 } from 'lucide-react'
 import { useCart } from '@/components/cart/cart-provider'
 import { formatPrice } from '@/lib/products'
 import { Button, buttonVariants } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
+import { loadStripe } from '@stripe/stripe-js'
+
+const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || 'pk_test_123')
 
 export default function CheckoutPage() {
   const { lines, subtotal } = useCart()
+  const [loading, setLoading] = useState(false)
+  
   const shipping = subtotal >= 150 || subtotal === 0 ? 0 : 8
   const tax = Math.round(subtotal * 0.0775 * 100) / 100
   const total = subtotal + shipping + tax
@@ -31,6 +37,35 @@ export default function CheckoutPage() {
     )
   }
 
+  const handleCheckout = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setLoading(true)
+
+    try {
+      const response = await fetch('/api/checkout', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ items: lines }),
+      })
+
+      const data = await response.json()
+      
+      if (data.url) {
+        window.location.href = data.url
+      } else {
+        console.error('Checkout error:', data.error)
+        alert('An error occurred during checkout setup.')
+        setLoading(false)
+      }
+    } catch (error) {
+      console.error('Network error:', error)
+      alert('Network error. Please try again.')
+      setLoading(false)
+    }
+  }
+
   return (
     <div className="mx-auto max-w-6xl px-4 py-12">
       <h1 className="mb-8 font-display text-4xl uppercase leading-none sm:text-5xl">
@@ -40,31 +75,9 @@ export default function CheckoutPage() {
       <div className="grid gap-10 lg:grid-cols-[1.3fr_1fr]">
         {/* Form */}
         <form
-          onSubmit={(e) => e.preventDefault()}
+          onSubmit={handleCheckout}
           className="flex flex-col gap-8"
         >
-          <section>
-            <h2 className="mb-4 font-display text-xl uppercase">Contact</h2>
-            <input
-              type="email"
-              required
-              placeholder="Email"
-              aria-label="Email"
-              className="h-11 w-full rounded-sm border border-border bg-card px-3 text-sm focus:border-primary focus:outline-none"
-            />
-          </section>
-
-          <section>
-            <h2 className="mb-4 font-display text-xl uppercase">Shipping address</h2>
-            <div className="grid gap-3 sm:grid-cols-2">
-              <input placeholder="First name" aria-label="First name" className="h-11 rounded-sm border border-border bg-card px-3 text-sm focus:border-primary focus:outline-none" />
-              <input placeholder="Last name" aria-label="Last name" className="h-11 rounded-sm border border-border bg-card px-3 text-sm focus:border-primary focus:outline-none" />
-              <input placeholder="Address" aria-label="Address" className="col-span-full h-11 rounded-sm border border-border bg-card px-3 text-sm focus:border-primary focus:outline-none" />
-              <input placeholder="City" aria-label="City" className="h-11 rounded-sm border border-border bg-card px-3 text-sm focus:border-primary focus:outline-none" />
-              <input placeholder="ZIP code" aria-label="ZIP code" className="h-11 rounded-sm border border-border bg-card px-3 text-sm focus:border-primary focus:outline-none" />
-            </div>
-          </section>
-
           <section>
             <h2 className="mb-2 font-display text-xl uppercase">Payment</h2>
             <div className="rounded-sm border border-dashed border-border bg-card p-5 text-sm text-muted-foreground">
@@ -72,15 +85,15 @@ export default function CheckoutPage() {
                 <Lock className="size-4 text-primary" /> Secure Stripe Checkout
               </p>
               <p className="mt-2 leading-relaxed">
-                Card, Apple Pay, and Google Pay will be handled by Stripe&apos;s
-                hosted checkout. Payment processing is wired up in the next build
-                phase.
+                Card, Apple Pay, and Google Pay will be securely processed by Stripe. 
+                You will be redirected to Stripe to enter your payment and shipping details.
               </p>
             </div>
           </section>
 
-          <Button size="lg" className="h-12 text-sm">
-            Pay {formatPrice(total)}
+          <Button type="submit" size="lg" className="h-12 text-sm" disabled={loading}>
+            {loading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
+            {loading ? 'Processing...' : `Pay ${formatPrice(total)}`}
           </Button>
         </form>
 
