@@ -14,6 +14,9 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Cart is empty' }, { status: 400 })
     }
 
+    // Get the base URL for success/cancel redirects and images
+    const origin = req.headers.get('origin') || process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
+
     // Format line items for Stripe
     const line_items = items.map((item: any) => ({
       price_data: {
@@ -21,8 +24,7 @@ export async function POST(req: Request) {
         product_data: {
           name: item.product.name,
           images: item.product.images.map((img: string) => {
-            const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
-            return img.startsWith('http') ? img : `${baseUrl}${img}`
+            return img.startsWith('http') ? img : `${origin}${img}`
           }),
           description: `Size: ${item.size} | Color: ${item.color}`,
         },
@@ -40,8 +42,6 @@ export async function POST(req: Request) {
     // Shipping fee: $8 if subtotal < $150, else Free
     const shippingCost = subtotal >= 150 ? 0 : 800 // in cents
 
-    // Get the base URL for success/cancel redirects
-    const origin = req.headers.get('origin') || process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
 
     // Create Checkout Sessions from body params.
     const session = await stripe.checkout.sessions.create({
