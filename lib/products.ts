@@ -137,11 +137,129 @@ export const PRODUCTS: Product[] = [
 
   // ── Self Made King ──
 
+  {
+    id: 'p5',
+    slug: 'king-shit-tee',
+    name: 'King Shit Tee',
+    price: 55,
+    collection: 'self-made-king',
+    category: 'Tops',
+    image: '/products/king-shit-tee.jpg',
+    images: ['/products/king-shit-tee.jpg'],
+    colors: ['Black'],
+    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    description:
+      'KING SHIT. SELF MADE. A bold statement on a heavyweight black tee. Simple, clear, powerful.',
+    details: [
+      '240gsm ring-spun combed cotton',
+      'Boxy, structured fit',
+      'Bold text chest print',
+      'Garment-dyed, pre-shrunk',
+    ],
+    status: 'new',
+    inventory: 50,
+    featured: true,
+  },
+  {
+    id: 'p15',
+    slug: 'self-made-king-script-tee',
+    name: 'Self Made King Script Tee',
+    price: 52,
+    collection: 'self-made-king',
+    category: 'Tops',
+    image: '/products/self-made-king-script-tee.png',
+    images: ['/products/self-made-king-script-tee.png'],
+    colors: ['Black'],
+    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    description:
+      'Classic heavyweight tee with elegant script lettering at the neckline. Understated luxury for the modern king.',
+    details: [
+      '240gsm ring-spun combed cotton',
+      'Boxy, structured fit',
+      'Neckline script print',
+      'Garment-dyed, pre-shrunk',
+    ],
+    status: 'new',
+    inventory: 45,
+    featured: true,
+  },
+  {
+    id: 'p16',
+    slug: 'gorilla-king-tee',
+    name: 'Gorilla King Tee',
+    price: 58,
+    collection: 'self-made-king',
+    category: 'Tops',
+    image: '/products/gorilla-king-tee.png',
+    images: ['/products/gorilla-king-tee.png'],
+    colors: ['Black'],
+    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    description:
+      'The Gorilla King. Featuring a crowned gorilla in oil-painting style and graffiti lettering. Pure power.',
+    details: [
+      '240gsm ring-spun combed cotton',
+      'Boxy, structured fit',
+      'Large front graphic',
+      'Garment-dyed, pre-shrunk',
+    ],
+    status: 'new',
+    inventory: 40,
+    featured: true,
+  },
+
+
+  {
+    id: 'p18',
+    slug: 'smk-orange-county-tee',
+    name: 'SMK Orange County Tee',
+    price: 52,
+    collection: '949-essentials',
+    category: 'Tops',
+    image: '/products/smk-orange-county-tee.png',
+    images: ['/products/smk-orange-county-tee.png'],
+    colors: ['Black'],
+    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    description:
+      'Classic Orange County streetwear. Heavyweight black tee featuring the SMK crown and shield graphic in bold orange.',
+    details: [
+      '240gsm ring-spun combed cotton',
+      'Boxy, structured fit',
+      'Orange County Shield graphic',
+      'Garment-dyed, pre-shrunk',
+    ],
+    status: 'new',
+    inventory: 60,
+    featured: true,
+  },
+
   // ── 949 Essentials ──
 
 
 
   // ── Accessories ──
+  {
+    id: 'p9',
+    slug: 'smk-gothic-snapback',
+    name: 'SMK Gothic Snapback',
+    price: 42,
+    collection: 'accessories',
+    category: 'Headwear',
+    image: '/products/smk-snapback.png',
+    images: ['/products/smk-snapback.png'],
+    colors: ['Black'],
+    sizes: ['One Size'],
+    description:
+      'Structured six-panel snapback with SMK embroidered in white gothic old-english lettering. Flat brim, adjustable snap closure.',
+    details: [
+      'Structured six-panel crown',
+      'Flat brim',
+      'Gothic SMK embroidery',
+      'Adjustable snap closure',
+    ],
+    status: 'new',
+    inventory: 120,
+    featured: true,
+  },
 
 
   // ── Limited Drops ──
