@@ -292,29 +292,6 @@ export const PRODUCTS: Product[] = [
     inventory: 20,
     featured: true,
   },
-  {
-    id: 'p9',
-    slug: 'smk-gothic-snapback',
-    name: 'SMK Gothic Snapback',
-    price: 42,
-    collection: 'accessories',
-    category: 'Headwear',
-    image: '/products/smk-snapback.jpg',
-    images: ['/products/smk-snapback.jpg'],
-    colors: ['Black'],
-    sizes: ['One Size'],
-    description:
-      'Structured six-panel snapback with SMK embroidered in white gothic old-english lettering. Flat brim, adjustable snap closure.',
-    details: [
-      'Structured six-panel crown',
-      'Flat brim',
-      'Gothic SMK embroidery',
-      'Adjustable snap closure',
-    ],
-    status: 'new',
-    inventory: 120,
-    featured: true,
-  },
 ]
 
 // ── Artwork gallery ──
