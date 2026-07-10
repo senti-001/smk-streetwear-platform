@@ -85,8 +85,75 @@ export const COLLECTIONS: Collection[] = [
 ]
 
 export const PRODUCTS: Product[] = [
-  // ── Self Made King ──
-
+  {
+    id: 'p14',
+    slug: 'igbbmn-tee',
+    name: 'IGBBMN Tee',
+    price: 55,
+    collection: 'federal-reserve',
+    category: 'Tops',
+    image: '/products/igbbmn-tee.png',
+    images: ['/products/igbbmn-tee.png', '/artwork/federal-reserve-hundred.png'],
+    colors: ['White', 'Black'],
+    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    description:
+      'Heavyweight crewneck tee featuring the iconic IGBBMN $100 bill artwork bold across the front. Raw dark energy.',
+    details: [
+      '240gsm ring-spun combed cotton',
+      'Boxy oversized fit',
+      'Full front graphic print',
+      'Garment-dyed, pre-shrunk',
+    ],
+    status: 'new',
+    inventory: 45,
+    featured: true,
+  },
+  {
+    id: 'p20',
+    slug: 'igbbmn-hoodie',
+    name: 'IGBBMN Hoodie',
+    price: 135,
+    collection: 'federal-reserve',
+    category: 'Fleece',
+    image: '/products/igbbmn-hoodie.png',
+    images: ['/products/igbbmn-hoodie.png', '/artwork/federal-reserve-hundred.png'],
+    colors: ['White', 'Black'],
+    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    description:
+      'The IGBBMN Federal Reserve artwork on a premium 500gsm heavyweight hoodie. Keep warm and stay dangerous.',
+    details: [
+      '500gsm brushed-back fleece',
+      'Oversized drop-shoulder fit',
+      'Full-color front graphic',
+      'Double-lined hood',
+    ],
+    status: 'new',
+    inventory: 30,
+    featured: true,
+  },
+  {
+    id: 'p17',
+    slug: 'smk-smoke-stacks-tee',
+    name: 'SMK Smoke & Stacks Tee',
+    price: 65,
+    collection: 'self-made-king',
+    category: 'Tops',
+    image: '/products/smk-smoke-stacks-tee.png',
+    images: ['/products/smk-smoke-stacks-tee.png'],
+    colors: ['Black'],
+    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    description:
+      'The Smoke & Stacks Lifestyle tee. Featuring the iconic photo of raw SMK energy. Heavyweight black blank, premium print.',
+    details: [
+      '240gsm ring-spun combed cotton',
+      'Boxy oversized fit',
+      'High-resolution photo print',
+      'Garment-dyed, pre-shrunk',
+    ],
+    status: 'new',
+    inventory: 50,
+    featured: true,
+  },
   {
     id: 'p5',
     slug: 'king-shit-tee',
@@ -108,6 +175,29 @@ export const PRODUCTS: Product[] = [
     ],
     status: 'new',
     inventory: 50,
+    featured: true,
+  },
+  {
+    id: 'p18',
+    slug: 'smk-orange-county-tee',
+    name: 'SMK Orange County Tee',
+    price: 52,
+    collection: '949-essentials',
+    category: 'Tops',
+    image: '/products/smk-orange-county-tee.png',
+    images: ['/products/smk-orange-county-tee.png'],
+    colors: ['Black'],
+    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    description:
+      'Classic Orange County streetwear. Heavyweight black tee featuring the SMK crown and shield graphic in bold orange.',
+    details: [
+      '240gsm ring-spun combed cotton',
+      'Boxy, structured fit',
+      'Orange County Shield graphic',
+      'Garment-dyed, pre-shrunk',
+    ],
+    status: 'new',
+    inventory: 60,
     featured: true,
   },
   {
@@ -156,65 +246,6 @@ export const PRODUCTS: Product[] = [
     inventory: 40,
     featured: true,
   },
-
-
-  {
-    id: 'p18',
-    slug: 'smk-orange-county-tee',
-    name: 'SMK Orange County Tee',
-    price: 52,
-    collection: '949-essentials',
-    category: 'Tops',
-    image: '/products/smk-orange-county-tee.png',
-    images: ['/products/smk-orange-county-tee.png'],
-    colors: ['Black'],
-    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-    description:
-      'Classic Orange County streetwear. Heavyweight black tee featuring the SMK crown and shield graphic in bold orange.',
-    details: [
-      '240gsm ring-spun combed cotton',
-      'Boxy, structured fit',
-      'Orange County Shield graphic',
-      'Garment-dyed, pre-shrunk',
-    ],
-    status: 'new',
-    inventory: 60,
-    featured: true,
-  },
-
-  // ── 949 Essentials ──
-
-
-
-  // ── Accessories ──
-  {
-    id: 'p9',
-    slug: 'smk-gothic-snapback',
-    name: 'SMK Gothic Snapback',
-    price: 42,
-    collection: 'accessories',
-    category: 'Headwear',
-    image: '/products/smk-snapback.jpg',
-    images: ['/products/smk-snapback.jpg'],
-    colors: ['Black'],
-    sizes: ['One Size'],
-    description:
-      'Structured six-panel snapback with SMK embroidered in white gothic old-english lettering. Flat brim, adjustable snap closure.',
-    details: [
-      'Structured six-panel crown',
-      'Flat brim',
-      'Gothic SMK embroidery',
-      'Adjustable snap closure',
-    ],
-    status: 'new',
-    inventory: 120,
-    featured: true,
-  },
-
-
-  // ── Limited Drops ──
-
-  // ── Gorilla King ──
   {
     id: 'p13',
     slug: 'cocaine-breakfast-hoodie',
@@ -238,51 +269,27 @@ export const PRODUCTS: Product[] = [
     inventory: 20,
     featured: true,
   },
-
   {
-    id: 'p14',
-    slug: 'igbbmn-tee',
-    name: 'IGBBMN Tee',
-    price: 55,
-    collection: 'federal-reserve',
-    category: 'Tops',
-    image: '/products/igbbmn-tee.png',
-    images: ['/products/igbbmn-tee.png', '/artwork/federal-reserve-hundred.png'],
-    colors: ['White', 'Black'],
-    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-    description:
-      'Heavyweight crewneck tee featuring the iconic IGBBMN $100 bill artwork bold across the front. Raw dark energy.',
-    details: [
-      '240gsm ring-spun combed cotton',
-      'Boxy oversized fit',
-      'Full front graphic print',
-      'Garment-dyed, pre-shrunk',
-    ],
-    status: 'new',
-    inventory: 45,
-    featured: true,
-  },
-  {
-    id: 'p17',
-    slug: 'smk-smoke-stacks-tee',
-    name: 'SMK Smoke & Stacks Tee',
-    price: 65,
-    collection: 'self-made-king',
-    category: 'Tops',
-    image: '/products/smk-smoke-stacks-tee.png',
-    images: ['/products/smk-smoke-stacks-tee.png'],
+    id: 'p9',
+    slug: 'smk-gothic-snapback',
+    name: 'SMK Gothic Snapback',
+    price: 42,
+    collection: 'accessories',
+    category: 'Headwear',
+    image: '/products/smk-snapback.jpg',
+    images: ['/products/smk-snapback.jpg'],
     colors: ['Black'],
-    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    sizes: ['One Size'],
     description:
-      'The Smoke & Stacks Lifestyle tee. Featuring the iconic photo of raw SMK energy. Heavyweight black blank, premium print.',
+      'Structured six-panel snapback with SMK embroidered in white gothic old-english lettering. Flat brim, adjustable snap closure.',
     details: [
-      '240gsm ring-spun combed cotton',
-      'Boxy oversized fit',
-      'High-resolution photo print',
-      'Garment-dyed, pre-shrunk',
+      'Structured six-panel crown',
+      'Flat brim',
+      'Gothic SMK embroidery',
+      'Adjustable snap closure',
     ],
     status: 'new',
-    inventory: 50,
+    inventory: 120,
     featured: true,
   },
 ]
