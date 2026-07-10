@@ -244,8 +244,8 @@ export const PRODUCTS: Product[] = [
     price: 42,
     collection: 'accessories',
     category: 'Headwear',
-    image: '/products/smk-snapback.png',
-    images: ['/products/smk-snapback.png'],
+    image: '/products/smk-snapback.jpg',
+    images: ['/products/smk-snapback.jpg'],
     colors: ['Black'],
     sizes: ['One Size'],
     description:
