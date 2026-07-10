@@ -27,9 +27,25 @@ export function Newsletter() {
           </p>
         ) : (
           <form
-            onSubmit={(e) => {
+            onSubmit={async (e) => {
               e.preventDefault()
-              if (email) setSubmitted(true)
+              if (!email) return
+
+              try {
+                const res = await fetch('/api/newsletter', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({ email }),
+                })
+                
+                if (res.ok) {
+                  setSubmitted(true)
+                } else {
+                  console.error('Failed to subscribe')
+                }
+              } catch (error) {
+                console.error('Error:', error)
+              }
             }}
             className="mx-auto mt-8 flex max-w-md flex-col gap-3 sm:flex-row"
           >
