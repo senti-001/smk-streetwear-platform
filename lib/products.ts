@@ -85,7 +85,30 @@ export const COLLECTIONS: Collection[] = [
 ]
 
 export const PRODUCTS: Product[] = [
-
+  // ── Smoke Series ──
+  {
+    id: 'p19',
+    slug: 'smk-chrome-logo-tee',
+    name: 'SMK Chrome Logo Tee',
+    price: 55,
+    collection: 'smoke-series',
+    category: 'Tops',
+    image: '/products/smk-chrome-tee.png',
+    images: ['/products/smk-chrome-tee.png'],
+    colors: ['Black'],
+    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    description:
+      'The signature piece. A 240gsm heavyweight tee with the SMK gothic old-english lettering in chrome smoke effect across the chest. Garment-dyed, boxy oversized fit.',
+    details: [
+      '240gsm ring-spun combed cotton',
+      'Boxy oversized fit',
+      'Chrome gothic chest print',
+      'Garment-dyed, pre-shrunk',
+    ],
+    status: 'new',
+    inventory: 42,
+    featured: true,
+  },
   // ── Federal Reserve ──
 
   {
