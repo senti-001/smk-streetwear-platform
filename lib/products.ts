@@ -371,6 +371,22 @@ export const ARTWORKS: Artwork[] = [
     description:
       'The pure essence of Self Made King. Chrome smoke gothic logo over heavy stacks of hundreds.',
   },
+  {
+    id: 'art-5',
+    slug: 'smk-sketch-girl',
+    title: 'SMK Sketch',
+    image: '/artwork/smk-sketch-girl.jpg',
+    description:
+      'Pencil-style sketch of the SMK lifestyle. Crown logo, smoke, and stacks.',
+  },
+  {
+    id: 'art-6',
+    slug: 'smk-alleyway-girl',
+    title: 'SMK Alleyway',
+    image: '/artwork/smk-alleyway-girl.jpg',
+    description:
+      'Raw street energy. Holding stacks in the SMK crop tee and sweatpants.',
+  },
 ]
 
 export function getProduct(slug: string) {
