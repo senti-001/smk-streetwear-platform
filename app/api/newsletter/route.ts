@@ -89,7 +89,7 @@ export async function POST(req: Request) {
           Member Exclusive
         </p>
         <h3 style="margin: 0 0 10px; font-size: 22px; font-weight: 900; letter-spacing: 0.04em; text-transform: uppercase; color: #f5f0e8;">
-          Archive Drop — 40% Off
+          Archive Drop — 20% Off
         </h3>
         <p style="margin: 0 0 20px; font-size: 14px; line-height: 1.6; color: #8a7a6a;">
           Previous collections. Limited inventory. Once it's gone, it's gone. 
