@@ -1,0 +1,37 @@
+{
+  "archiveSale": {
+    "active": true,
+    "headline": "Archive Drop",
+    "subheadline": "Previous collections. Limited inventory. While supplies last.",
+    "discountPercent": 20,
+    "discountCode": "ARCHIVE20",
+    "shopifyDiscountUrl": "https://hfvy1s-cu.myshopify.com/discount/ARCHIVE20?redirect=/archive",
+    "endsAt": null,
+    "totalInventoryRemaining": 36
+  },
+  "homepage": {
+    "showArchiveBanner": true,
+    "featuredMessage": "New arrivals available now.",
+    "urgencyBadge": null
+  },
+  "instagram": {
+    "caption": "Archive Drop is live. Previous collections. Up to 40% off. Limited inventory — once it's gone, it's gone. #SMK #SelfMadeKing #ArchiveDrop",
+    "hashtags": [
+      "SMK",
+      "SelfMadeKing",
+      "949",
+      "OrangeCounty",
+      "Streetwear",
+      "ArchiveDrop",
+      "IGBBMN"
+    ],
+    "generatedAt": "2026-07-13T22:45:20.300Z"
+  },
+  "email": {
+    "subjectLine": "Archive Drop — While Supplies Last",
+    "previewText": "Previous collections. Once gone, never restocked.",
+    "generatedAt": "2026-07-13T22:45:20.300Z"
+  },
+  "lastUpdated": "2026-07-13T22:45:20.300Z",
+  "agentVersion": "1.0.0"
+}

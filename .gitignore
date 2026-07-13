@@ -13,3 +13,8 @@ __v0_jsx-dev-runtime.ts
 node_modules
 .next/
 .DS_Store
+
+# Marketing agent — generated files (rebuilt each run)
+# marketing-config.json is committed by the agent (intentional)
+lib/shopify-inventory-cache.json
+.agent-pr-body.md

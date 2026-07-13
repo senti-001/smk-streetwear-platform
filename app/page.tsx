@@ -1,12 +1,17 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, ArrowUpRight, Flame } from 'lucide-react'
 import { ProductCard } from '@/components/commerce/product-card'
 import { Newsletter } from '@/components/marketing/newsletter'
 import { PRODUCTS, ARTWORKS } from '@/lib/products'
+import marketingConfig from '@/lib/marketing-config.json'
 
 export default function HomePage() {
   const products = PRODUCTS
+  const { archiveSale, homepage } = marketingConfig
+
+  // Total inventory remaining across all products (for urgency signal)
+  const totalInventory = PRODUCTS.reduce((sum, p) => sum + p.inventory, 0)
 
   return (
     <>
@@ -50,6 +55,81 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ── Archive Drop Banner (agent-controlled) ── */}
+      {homepage.showArchiveBanner && archiveSale.active && (
+        <section className="relative overflow-hidden bg-secondary text-secondary-foreground">
+          {/* Grain overlay */}
+          <div className="grain absolute inset-0 pointer-events-none" />
+          {/* Decorative background text */}
+          <div
+            className="pointer-events-none absolute inset-0 flex items-center justify-center overflow-hidden select-none"
+            aria-hidden
+          >
+            <span className="font-display whitespace-nowrap text-[16vw] font-black uppercase leading-none text-secondary-foreground/[0.04]">
+              ARCHIVE
+            </span>
+          </div>
+
+          <div className="relative mx-auto max-w-7xl px-4 py-14">
+            <div className="flex flex-col items-start gap-6 lg:flex-row lg:items-center lg:justify-between">
+              {/* Left: copy */}
+              <div className="max-w-xl">
+                <p className="mb-3 text-xs font-bold uppercase tracking-[0.30em] text-primary">
+                  Limited Time
+                </p>
+                <h2 className="font-display text-5xl uppercase leading-none sm:text-6xl">
+                  {archiveSale.headline}
+                </h2>
+                <p className="mt-4 text-sm leading-relaxed text-secondary-foreground/70">
+                  {archiveSale.subheadline}
+                </p>
+                {/* Inventory urgency */}
+                {totalInventory <= 200 && (
+                  <p className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-primary">
+                    <Flame className="size-3.5" />
+                    {totalInventory} units remaining across all styles
+                  </p>
+                )}
+              </div>
+
+              {/* Right: stats + CTA */}
+              <div className="flex flex-col items-start gap-6 lg:items-end">
+                {/* Discount badge */}
+                <div className="flex items-baseline gap-2">
+                  <span className="font-display text-6xl leading-none text-primary sm:text-7xl">
+                    {archiveSale.discountPercent}%
+                  </span>
+                  <span className="font-display text-2xl uppercase leading-none text-secondary-foreground/60">
+                    Off
+                  </span>
+                </div>
+
+                <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
+                  <a
+                    id="homepage-archive-cta"
+                    href={archiveSale.shopifyDiscountUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex h-11 items-center gap-2 rounded-sm bg-primary px-7 text-sm font-bold uppercase tracking-[0.18em] text-primary-foreground transition-all hover:scale-105 hover:bg-primary/90 active:scale-100"
+                  >
+                    Shop Archive <ArrowUpRight className="size-4" />
+                  </a>
+                  <Link
+                    href="/archive"
+                    className="inline-flex h-11 items-center gap-2 rounded-sm border border-secondary-foreground/20 px-6 text-sm font-semibold uppercase tracking-[0.14em] text-secondary-foreground transition-colors hover:border-primary hover:text-primary"
+                  >
+                    View all styles <ArrowRight className="size-4" />
+                  </Link>
+                </div>
+                <p className="text-xs text-secondary-foreground/40">
+                  Discount auto-applied — no code needed
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Latest Gear */}
       <section className="mx-auto max-w-7xl px-4 py-16">

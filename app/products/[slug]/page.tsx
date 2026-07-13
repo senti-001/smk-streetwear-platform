@@ -22,13 +22,37 @@ export async function generateMetadata({
   const { slug } = await params
   const product = getProduct(slug)
   if (!product) return { title: 'Product | SMK' }
+
+  // Rich SEO title: "SMK [Name] — [Category] | Self Made King OC Streetwear"
+  const seoTitle = `SMK ${product.name} — ${product.category} | Self Made King Orange County Streetwear`
+  const seoDesc = `${product.description} ${product.details.join(' ')} Free shipping on orders over $75.`
+  const productUrl = `https://smk-streetwear-platform.vercel.app/products/${product.slug}`
+  const imageUrl = `https://smk-streetwear-platform.vercel.app${product.image}`
+
   return {
-    title: `${product.name} | SMK — Self Made King`,
-    description: product.description,
+    title: seoTitle,
+    description: seoDesc,
+    keywords: [
+      'SMK streetwear',
+      'Self Made King',
+      'Orange County streetwear',
+      '949',
+      product.name,
+      product.category.toLowerCase(),
+      'heavyweight streetwear',
+      'premium streetwear',
+      'oversized hoodie',
+      'OC streetwear',
+    ],
     openGraph: {
-      title: product.name,
-      description: product.description,
-      images: [product.image],
+      title: seoTitle,
+      description: seoDesc,
+      url: productUrl,
+      type: 'website',
+      images: [{ url: imageUrl, width: 1200, height: 1500, alt: product.name }],
+    },
+    alternates: {
+      canonical: productUrl,
     },
   }
 }
@@ -45,12 +69,20 @@ export default async function ProductPage({
   const collection = getCollection(product.collection)
   const related = relatedProducts(product)
 
+  const baseUrl = 'https://smk-streetwear-platform.vercel.app'
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Product',
     name: product.name,
     description: product.description,
-    image: product.image,
+    image: `${baseUrl}${product.image}`,
+    url: `${baseUrl}/products/${product.slug}`,
+    sku: product.id,
+    brand: {
+      '@type': 'Brand',
+      name: 'SMK — Self Made King',
+    },
+    category: product.category,
     offers: {
       '@type': 'Offer',
       price: product.price,
@@ -59,6 +91,13 @@ export default async function ProductPage({
         product.status === 'sold-out'
           ? 'https://schema.org/OutOfStock'
           : 'https://schema.org/InStock',
+      seller: {
+        '@type': 'Organization',
+        name: 'SMK Streetwear',
+      },
+      ...(product.compareAtPrice
+        ? { priceValidUntil: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString().split('T')[0] }
+        : {}),
     },
   }
 

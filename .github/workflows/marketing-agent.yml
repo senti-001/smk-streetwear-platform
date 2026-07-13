@@ -1,0 +1,137 @@
+name: 🤖 SMK Marketing Agent
+
+on:
+  schedule:
+    # Runs daily at 9:00 AM Central (14:00 UTC)
+    - cron: '0 14 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run — generate content but do not open PR'
+        required: false
+        default: 'false'
+        type: boolean
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  marketing-agent:
+    name: Run Marketing Agent
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      # ── 1. Checkout ─────────────────────────────────────────────────────
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      # ── 2. Setup Node + pnpm ─────────────────────────────────────────────
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      # ── 3. Install deps (only ts-node + types needed for agent) ─────────
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      # ── 4. Run the marketing agent ────────────────────────────────────────
+      - name: Run marketing agent
+        id: agent
+        env:
+          SHOPIFY_STORE_DOMAIN: ${{ secrets.SHOPIFY_STORE_DOMAIN }}
+          SHOPIFY_ADMIN_TOKEN: ${{ secrets.SHOPIFY_ADMIN_TOKEN }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          echo "🤖 Starting SMK Marketing Agent..."
+          npx ts-node --project tsconfig.json --transpile-only scripts/marketing-agent.ts
+          echo "agent_ran=true" >> $GITHUB_OUTPUT
+
+      # ── 5. Check for changes ─────────────────────────────────────────────
+      - name: Check for changes
+        id: changes
+        run: |
+          if git diff --quiet; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            echo "No changes detected — skipping PR"
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            echo "Changes detected:"
+            git diff --name-only
+          fi
+
+      # ── 6. Create branch + commit ─────────────────────────────────────────
+      - name: Create marketing update branch
+        if: steps.changes.outputs.has_changes == 'true' && github.event.inputs.dry_run != 'true'
+        run: |
+          DATE=$(date +%Y-%m-%d)
+          BRANCH="marketing/agent-update-${DATE}"
+          git config user.name "SMK Marketing Agent"
+          git config user.email "agent@smkstreetwear.com"
+          git checkout -b "$BRANCH"
+          git add lib/marketing-config.json lib/shopify-inventory-cache.json
+          git diff --cached --name-only
+          git commit -m "chore(marketing): agent update ${DATE}
+
+          - Synced Shopify inventory
+          - Updated marketing-config.json
+          - Refreshed Instagram caption and email copy
+          
+          [automated]"
+          git push origin "$BRANCH"
+          echo "BRANCH=$BRANCH" >> $GITHUB_ENV
+
+      # ── 7. Read PR body ────────────────────────────────────────────────────
+      - name: Read PR body
+        if: steps.changes.outputs.has_changes == 'true' && github.event.inputs.dry_run != 'true'
+        id: pr_body
+        run: |
+          if [ -f ".agent-pr-body.md" ]; then
+            echo "body<<EOF" >> $GITHUB_OUTPUT
+            cat .agent-pr-body.md >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
+          else
+            echo "body=Marketing agent update — see changed files for details." >> $GITHUB_OUTPUT
+          fi
+
+      # ── 8. Open Pull Request ────────────────────────────────────────────
+      - name: Open Pull Request
+        if: steps.changes.outputs.has_changes == 'true' && github.event.inputs.dry_run != 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ env.BRANCH }}
+          base: main
+          title: "🤖 Marketing Update — ${{ github.run_number }} ($(date +%Y-%m-%d))"
+          body: ${{ steps.pr_body.outputs.body }}
+          labels: |
+            marketing
+            automated
+            agent
+          reviewers: ''
+          draft: false
+
+      # ── 9. Dry run summary ─────────────────────────────────────────────────
+      - name: Dry run summary
+        if: github.event.inputs.dry_run == 'true'
+        run: |
+          echo "🏃 Dry run complete — no PR opened."
+          echo ""
+          if [ -f ".agent-pr-body.md" ]; then
+            cat .agent-pr-body.md
+          fi
+
+      # ── 10. Cleanup temp files ────────────────────────────────────────────
+      - name: Cleanup temp files
+        if: always()
+        run: rm -f .agent-pr-body.md
