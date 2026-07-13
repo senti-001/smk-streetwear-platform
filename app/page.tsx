@@ -106,17 +106,15 @@ export default function HomePage() {
                 </div>
 
                 <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
-                  <a
+                  <Link
                     id="homepage-archive-cta"
-                    href={archiveSale.shopifyDiscountUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="/archive"
                     className="inline-flex h-11 items-center gap-2 rounded-sm bg-primary px-7 text-sm font-bold uppercase tracking-[0.18em] text-primary-foreground transition-all hover:scale-105 hover:bg-primary/90 active:scale-100"
                   >
-                    Shop Archive <ArrowUpRight className="size-4" />
-                  </a>
+                    Shop Archive <ArrowRight className="size-4" />
+                  </Link>
                   <Link
-                    href="/archive"
+                    href="/shop"
                     className="inline-flex h-11 items-center gap-2 rounded-sm border border-secondary-foreground/20 px-6 text-sm font-semibold uppercase tracking-[0.14em] text-secondary-foreground transition-colors hover:border-primary hover:text-primary"
                   >
                     View all styles <ArrowRight className="size-4" />
