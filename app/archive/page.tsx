@@ -111,9 +111,7 @@ export default function ArchivePage() {
           <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
             <a
               id="archive-shop-cta"
-              href={archiveSale.shopifyDiscountUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#archive-products"
               className="inline-flex h-12 items-center gap-2 rounded-sm bg-primary px-8 text-sm font-bold uppercase tracking-[0.18em] text-primary-foreground transition-all hover:scale-105 hover:bg-primary/90 active:scale-100"
             >
               Shop Archive <ArrowRight className="size-4" />
@@ -155,7 +153,7 @@ export default function ArchivePage() {
       </section>
 
       {/* ── Product Grid ── */}
-      <section className="mx-auto max-w-7xl px-4 py-16">
+      <section id="archive-products" className="mx-auto max-w-7xl px-4 py-16">
         <div className="mb-10 flex items-end justify-between">
           <div>
             <p className="mb-2 text-xs font-semibold uppercase tracking-[0.24em] text-primary">

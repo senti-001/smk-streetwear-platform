@@ -9,6 +9,7 @@ import { formatPrice } from '@/lib/products'
 import { Button, buttonVariants } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { loadStripe } from '@stripe/stripe-js'
+import marketingConfig from '@/lib/marketing-config.json'
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || 'pk_test_123')
 
@@ -47,7 +48,10 @@ export default function CheckoutPage() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ items: lines }),
+        body: JSON.stringify({ 
+          items: lines,
+          ...(marketingConfig.archiveSale.active && marketingConfig.archiveSale.discountCode ? { discountCode: marketingConfig.archiveSale.discountCode } : {})
+        }),
       })
 
       const data = await response.json()

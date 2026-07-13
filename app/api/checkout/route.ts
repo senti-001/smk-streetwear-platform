@@ -8,7 +8,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || 'sk_test_123', {
 
 export async function POST(req: Request) {
   try {
-    const { items } = await req.json()
+    const { items, discountCode } = await req.json()
 
     if (!items || items.length === 0) {
       return NextResponse.json({ error: 'Cart is empty' }, { status: 400 })
@@ -42,9 +42,8 @@ export async function POST(req: Request) {
     // Shipping fee: $8 if subtotal < $150, else Free
     const shippingCost = subtotal >= 150 ? 0 : 800 // in cents
 
-
     // Create Checkout Sessions from body params.
-    const session = await stripe.checkout.sessions.create({
+    const sessionParams: Stripe.Checkout.SessionCreateParams = {
       payment_method_types: ['card'],
       shipping_address_collection: {
         allowed_countries: ['US', 'CA'], // Adjust as needed
@@ -75,7 +74,13 @@ export async function POST(req: Request) {
       mode: 'payment',
       success_url: `${origin}/checkout/success`,
       cancel_url: `${origin}/checkout/cancel`,
-    })
+    }
+
+    if (discountCode) {
+      sessionParams.discounts = [{ coupon: discountCode }]
+    }
+
+    const session = await stripe.checkout.sessions.create(sessionParams)
 
     return NextResponse.json({ url: session.url })
   } catch (err: any) {

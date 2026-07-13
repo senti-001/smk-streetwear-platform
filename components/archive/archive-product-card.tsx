@@ -75,15 +75,11 @@ export function ArchiveProductCard({
         )}
 
         {!soldOut && (
-          <a
-            href={discountUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={(e) => e.stopPropagation()}
+          <span
             className="absolute inset-x-3 bottom-3 translate-y-2 rounded-sm bg-background/95 py-2.5 text-center text-xs font-bold uppercase tracking-[0.14em] text-foreground opacity-0 backdrop-blur transition-all duration-300 hover:bg-primary hover:text-primary-foreground group-hover:translate-y-0 group-hover:opacity-100"
           >
-            Shop Archive ↗
-          </a>
+            View Product ↗
+          </span>
         )}
       </Link>
 
