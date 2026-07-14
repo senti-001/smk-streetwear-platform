@@ -2,8 +2,8 @@ name: 🤖 SMK Marketing Agent
 
 on:
   schedule:
-    # Runs daily at 9:00 AM Central (14:00 UTC)
-    - cron: '0 14 * * *'
+    # Runs weekly on Fridays at 9:00 AM Central (14:00 UTC)
+    - cron: '0 14 * * 5'
   workflow_dispatch:
     inputs:
       dry_run:
