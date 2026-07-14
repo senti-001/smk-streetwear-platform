@@ -6,6 +6,7 @@ import { CartProvider } from '@/components/cart/cart-provider'
 import { SiteHeader } from '@/components/layout/site-header'
 import { SiteFooter } from '@/components/layout/site-footer'
 import { CartDrawer } from '@/components/cart/cart-drawer'
+import { PromoPopup } from '@/components/marketing/promo-popup'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -54,6 +55,7 @@ export default function RootLayout({
           <main className="min-h-screen">{children}</main>
           <SiteFooter />
           <CartDrawer />
+          <PromoPopup />
         </CartProvider>
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
