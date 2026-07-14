@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { Heart, Minus, Plus, Ruler, Share2, Truck, X } from 'lucide-react'
 import { useCart } from '@/components/cart/cart-provider'
@@ -27,6 +27,13 @@ export function ProductDetail({ product }: { product: Product }) {
   const [wishlisted, setWishlisted] = useState(false)
   const [sizeGuideOpen, setSizeGuideOpen] = useState(false)
   const [error, setError] = useState(false)
+
+  useEffect(() => {
+    if (product.colorImages && product.colorImages[color]) {
+      const idx = product.images.indexOf(product.colorImages[color])
+      if (idx !== -1) setActiveImage(idx)
+    }
+  }, [color, product.colorImages, product.images])
 
   const soldOut = product.status === 'sold-out'
   const lowStock = product.inventory <= 15 && !soldOut

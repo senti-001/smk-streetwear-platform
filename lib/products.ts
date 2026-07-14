@@ -30,6 +30,7 @@ export type Product = {
   status: 'new' | 'core' | 'limited' | 'sold-out'
   inventory: number
   featured?: boolean
+  colorImages?: Record<string, string>
 }
 
 export type Artwork = {
@@ -93,8 +94,12 @@ export const PRODUCTS: Product[] = [
     collection: 'federal-reserve',
     category: 'Tops',
     image: '/products/igbbmn-tee.png',
-    images: ['/products/igbbmn-tee.png', '/artwork/federal-reserve-hundred.png'],
+    images: ['/products/igbbmn-tee.png', '/products/igbbmn-tee-black.png', '/artwork/federal-reserve-hundred.png'],
     colors: ['White', 'Black'],
+    colorImages: {
+      'White': '/products/igbbmn-tee.png',
+      'Black': '/products/igbbmn-tee-black.png'
+    },
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
     description:
       'Heavyweight crewneck tee featuring the iconic IGBBMN $100 bill artwork bold across the front. Raw dark energy.',
