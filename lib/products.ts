@@ -100,7 +100,7 @@ export const PRODUCTS: Product[] = [
       'White': '/products/igbbmn-tee.png',
       'Black': '/products/igbbmn-tee-black.png'
     },
-    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    sizes: ['L', 'XL', '2XL'],
     description:
       'Heavyweight crewneck tee featuring the iconic IGBBMN $100 bill artwork bold across the front. Raw dark energy.',
     details: [
@@ -123,7 +123,7 @@ export const PRODUCTS: Product[] = [
     image: '/products/igbbmn-hoodie.png',
     images: ['/products/igbbmn-hoodie.png', '/artwork/federal-reserve-hundred.png'],
     colors: ['White', 'Black'],
-    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    sizes: ['L', 'XL', '2XL'],
     description:
       'The IGBBMN Federal Reserve artwork on a premium 500gsm heavyweight hoodie. Keep warm and stay dangerous.',
     details: [
@@ -146,7 +146,7 @@ export const PRODUCTS: Product[] = [
     image: '/products/smk-smoke-stacks-tee.png',
     images: ['/products/smk-smoke-stacks-tee.png'],
     colors: ['Black'],
-    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    sizes: ['L', 'XL', '2XL'],
     description:
       'The Smoke & Stacks Lifestyle tee. Featuring the iconic photo of raw SMK energy. Heavyweight black blank, premium print.',
     details: [
@@ -169,7 +169,7 @@ export const PRODUCTS: Product[] = [
     image: '/products/king-shit-tee.jpg',
     images: ['/products/king-shit-tee.jpg'],
     colors: ['Black'],
-    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    sizes: ['L', 'XL', '2XL'],
     description:
       'KING SHIT. SELF MADE. A bold statement on a heavyweight black tee. Simple, clear, powerful.',
     details: [
@@ -192,7 +192,7 @@ export const PRODUCTS: Product[] = [
     image: '/products/smk-orange-county-tee.png',
     images: ['/products/smk-orange-county-tee.png'],
     colors: ['Black'],
-    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    sizes: ['L', 'XL', '2XL'],
     description:
       'Classic Orange County streetwear. Heavyweight black tee featuring the SMK crown and shield graphic in bold orange.',
     details: [
@@ -215,7 +215,7 @@ export const PRODUCTS: Product[] = [
     image: '/products/949-map-tee.png',
     images: ['/products/949-map-tee.png'],
     colors: ['Black'],
-    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    sizes: ['L', 'XL', '2XL'],
     description:
       'The 949 area code staple. Featuring the Orange County map, SMK crown, and smoke in vintage orange.',
     details: [
@@ -238,7 +238,7 @@ export const PRODUCTS: Product[] = [
     image: '/products/self-made-king-script-tee.png',
     images: ['/products/self-made-king-script-tee.png'],
     colors: ['Black'],
-    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    sizes: ['L', 'XL', '2XL'],
     description:
       'Classic heavyweight tee with elegant script lettering at the neckline. Understated luxury for the modern king.',
     details: [
@@ -261,7 +261,7 @@ export const PRODUCTS: Product[] = [
     image: '/products/gorilla-king-tee.png',
     images: ['/products/gorilla-king-tee.png'],
     colors: ['Black'],
-    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    sizes: ['L', 'XL', '2XL'],
     description:
       'The Gorilla King. Featuring a crowned gorilla in oil-painting style and graffiti lettering. Pure power.',
     details: [
@@ -284,7 +284,7 @@ export const PRODUCTS: Product[] = [
     image: '/products/cocaine-breakfast-hoodie.png',
     images: ['/products/cocaine-breakfast-hoodie.png'],
     colors: ['White', 'Black'],
-    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    sizes: ['L', 'XL', '2XL'],
     description:
       'Start the day right. The Cocaine Breakfast hoodie features a wild squirrel graphic. Pure energy in limited numbers.',
     details: [
