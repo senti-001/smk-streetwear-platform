@@ -104,7 +104,7 @@ export const PRODUCTS: Product[] = [
     description:
       'Heavyweight crewneck tee featuring the iconic IGBBMN $100 bill artwork bold across the front. Raw dark energy.',
     details: [
-      '240gsm ring-spun combed cotton',
+      'Printed on Gildan Heavy Cotton blanks',
       'Boxy oversized fit',
       'Full front graphic print',
       'Garment-dyed, pre-shrunk',
@@ -150,32 +150,9 @@ export const PRODUCTS: Product[] = [
     description:
       'The Smoke & Stacks Lifestyle tee. Featuring the iconic photo of raw SMK energy. Heavyweight black blank, premium print.',
     details: [
-      '240gsm ring-spun combed cotton',
+      'Printed on Gildan Heavy Cotton blanks',
       'Boxy oversized fit',
       'High-resolution photo print',
-      'Garment-dyed, pre-shrunk',
-    ],
-    status: 'new',
-    inventory: 50,
-    featured: true,
-  },
-  {
-    id: 'p5',
-    slug: 'king-shit-tee',
-    name: 'King Shit Tee',
-    price: 55,
-    collection: 'self-made-king',
-    category: 'Tops',
-    image: '/products/king-shit-tee.jpg',
-    images: ['/products/king-shit-tee.jpg'],
-    colors: ['Black'],
-    sizes: ['L', 'XL', '2XL'],
-    description:
-      'KING SHIT. SELF MADE. A bold statement on a heavyweight black tee. Simple, clear, powerful.',
-    details: [
-      '240gsm ring-spun combed cotton',
-      'Boxy, structured fit',
-      'Bold text chest print',
       'Garment-dyed, pre-shrunk',
     ],
     status: 'new',
@@ -196,7 +173,7 @@ export const PRODUCTS: Product[] = [
     description:
       'Classic Orange County streetwear. Heavyweight black tee featuring the SMK crown and shield graphic in bold orange.',
     details: [
-      '240gsm ring-spun combed cotton',
+      'Printed on Gildan Heavy Cotton blanks',
       'Boxy, structured fit',
       'Orange County Shield graphic',
       'Garment-dyed, pre-shrunk',
@@ -205,29 +182,7 @@ export const PRODUCTS: Product[] = [
     inventory: 60,
     featured: true,
   },
-  {
-    id: 'p21',
-    slug: '949-map-tee',
-    name: '949 Orange County Map Tee',
-    price: 52,
-    collection: '949-essentials',
-    category: 'Tops',
-    image: '/products/949-map-tee.png',
-    images: ['/products/949-map-tee.png'],
-    colors: ['Black'],
-    sizes: ['L', 'XL', '2XL'],
-    description:
-      'The 949 area code staple. Featuring the Orange County map, SMK crown, and smoke in vintage orange.',
-    details: [
-      '240gsm ring-spun combed cotton',
-      'Boxy, structured fit',
-      'Orange County Map graphic',
-      'Garment-dyed, pre-shrunk',
-    ],
-    status: 'new',
-    inventory: 50,
-    featured: true,
-  },
+
   {
     id: 'p15',
     slug: 'self-made-king-script-tee',
@@ -242,7 +197,7 @@ export const PRODUCTS: Product[] = [
     description:
       'Classic heavyweight tee with elegant script lettering at the neckline. Understated luxury for the modern king.',
     details: [
-      '240gsm ring-spun combed cotton',
+      'Printed on Gildan Heavy Cotton blanks',
       'Boxy, structured fit',
       'Neckline script print',
       'Garment-dyed, pre-shrunk',
@@ -265,7 +220,7 @@ export const PRODUCTS: Product[] = [
     description:
       'The Gorilla King. Featuring a crowned gorilla in oil-painting style and graffiti lettering. Pure power.',
     details: [
-      '240gsm ring-spun combed cotton',
+      'Printed on Gildan Heavy Cotton blanks',
       'Boxy, structured fit',
       'Large front graphic',
       'Garment-dyed, pre-shrunk',
@@ -274,27 +229,119 @@ export const PRODUCTS: Product[] = [
     inventory: 40,
     featured: true,
   },
+
+
   {
-    id: 'p13',
-    slug: 'cocaine-breakfast-hoodie',
-    name: 'Cocaine Breakfast Hoodie',
-    price: 135,
-    collection: 'limited-drops',
-    category: 'Fleece',
-    image: '/products/cocaine-breakfast-hoodie.png',
-    images: ['/products/cocaine-breakfast-hoodie.png'],
-    colors: ['White', 'Black'],
+    id: 'p27',
+    slug: 'smk-shoulder-logo-tee',
+    name: 'SMK Shoulder Logo Tee',
+    price: 52,
+    collection: 'self-made-king',
+    category: 'Tops',
+    image: '/products/smk-shoulder-logo-tee.png',
+    images: ['/products/smk-shoulder-logo-tee.png'],
+    colors: ['Black'],
     sizes: ['L', 'XL', '2XL'],
     description:
-      'Start the day right. The Cocaine Breakfast hoodie features a wild squirrel graphic. Pure energy in limited numbers.',
+      'Minimalist and bold. Features the signature SMK logo perfectly placed on the shoulder.',
     details: [
-      '500gsm brushed-back fleece',
-      'Oversized drop-shoulder fit',
-      'Full-color front graphic',
-      'Double-lined hood',
+      'Printed on Gildan Heavy Cotton blanks',
+      'Boxy oversized fit',
+      'Shoulder logo placement',
+      'Garment-dyed, pre-shrunk',
     ],
-    status: 'limited',
-    inventory: 20,
+    status: 'new',
+    inventory: 45,
+    featured: true,
+  },
+  {
+    id: 'p31',
+    slug: 'smk-splatter-tee',
+    name: 'SMK Splatter Tee',
+    price: 65,
+    collection: 'self-made-king',
+    category: 'Tops',
+    image: '/products/smk_white_tee_2.png',
+    images: ['/products/smk_white_tee_2.png'],
+    colors: ['White'],
+    sizes: ['S', 'M', 'L', 'XL', '2XL'],
+    description:
+      'Raw energy. Features a paint splatter SMK chest logo, vertical SELF MADE KING sleeve text, and the signature broken heart crown on the back neck.',
+    details: [
+      'Printed on Gildan Heavy Cotton blanks',
+      'Classic street fit',
+      'High-density graphic prints',
+      'Garment-dyed',
+    ],
+    status: 'new',
+    inventory: 50,
+    featured: true,
+  },
+  {
+    id: 'p33',
+    slug: '949-stealth-hoodie',
+    name: '949 Stealth Hoodie',
+    price: 125,
+    collection: '949-essentials',
+    category: 'Fleece',
+    image: '/products/smk_949_expanded_6.png',
+    images: ['/products/smk_949_expanded_6.png'],
+    colors: ['Black'],
+    sizes: ['S', 'M', 'L', 'XL', '2XL'],
+    description:
+      'Premium heavyweight stealth hoodie. Subtle 949 front neck detail, left cuff crown, and lower back cursive script.',
+    details: [
+      'Premium heavyweight cotton',
+      'Oversized street fit',
+      'Pre-shrunk & garment washed',
+      'Ribbed collar & cuffs',
+    ],
+    status: 'new',
+    inventory: 50,
+    featured: true,
+  },
+  {
+    id: 'p34',
+    slug: 'smk-exclusive-tee',
+    name: 'SMK Exclusive Tee',
+    price: 55,
+    collection: 'self-made-king',
+    category: 'Tops',
+    image: '/products/Gemini_Generated_Image_maa116maa116maa1.png',
+    images: ['/products/Gemini_Generated_Image_maa116maa116maa1.png'],
+    colors: ['White'],
+    sizes: ['S', 'M', 'L', 'XL', '2XL'],
+    description:
+      'A true 1 of 1 SMK exclusive design. Heavyweight cotton with bold aesthetics.',
+    details: [
+      'Printed on Gildan Heavy Cotton blanks',
+      'Boxy, structured fit',
+      'Garment-dyed, pre-shrunk',
+    ],
+    status: 'new',
+    inventory: 50,
+    featured: true,
+  },
+  {
+    id: 'p35',
+    slug: '949-stealth-tee',
+    name: '949 Stealth Tee',
+    price: 55,
+    collection: '949-essentials',
+    category: 'Tops',
+    image: '/products/smk_949_tee_2.png',
+    images: ['/products/smk_949_tee_2.png'],
+    colors: ['Black'],
+    sizes: ['S', 'M', 'L', 'XL', '2XL'],
+    description:
+      'The 949 Stealth Tee. Area code staples designed for the streets of Orange County.',
+    details: [
+      'Printed on Gildan Heavy Cotton blanks',
+      'Oversized street fit',
+      'Subtle tonal branding',
+    ],
+    status: 'new',
+    inventory: 50,
     featured: true,
   },
 ]
@@ -348,6 +395,30 @@ export const ARTWORKS: Artwork[] = [
     image: '/artwork/smk-alleyway-girl.jpg',
     description:
       'Raw street energy. Holding stacks in the SMK crop tee and sweatpants.',
+  },
+  {
+    id: 'art-7',
+    slug: 'night-walk-pitbull',
+    title: 'Night Walk',
+    image: '/artwork/night-walk-pitbull.png',
+    description:
+      'Model walking a Pitbull at night, wearing the SMK classic tee and sweatpants. Raw nighttime energy.',
+  },
+  {
+    id: 'art-8',
+    slug: 'truck-bed-pitbull',
+    title: 'Truck Bed',
+    image: '/artwork/truck-bed-pitbull.png',
+    description:
+      'SMK lifestyle on the back of a truck bed. Featuring the signature hoodie and a loyal Pitbull companion.',
+  },
+  {
+    id: 'art-9',
+    slug: 'smk-lifestyle-barcode',
+    title: 'SMK Lifestyle Barcode',
+    image: '/artwork/smk_lifestyle_3_barcode.png',
+    description:
+      'A local lifestyle photo repping the Self Made King barcode in Orange County.',
   },
 ]
 
