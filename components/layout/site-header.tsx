@@ -6,10 +6,11 @@ import { useState } from 'react'
 import { Menu, Search, ShoppingBag, User, X } from 'lucide-react'
 import { useCart } from '@/components/cart/cart-provider'
 import { cn } from '@/lib/utils'
+import { ThemeToggle } from '@/components/theme-toggle'
 
 const NAV = [
   { label: 'Shop All', href: '/shop' },
-  { label: 'New', href: '/shop?sort=new' },
+  { label: 'New', href: '/shop?collection=new-drops' },
   { label: 'About', href: '/about' },
 ]
 
@@ -93,6 +94,7 @@ export function SiteHeader() {
               {count}
             </span>
           </button>
+          <ThemeToggle />
         </div>
       </div>
 

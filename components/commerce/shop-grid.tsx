@@ -31,12 +31,14 @@ const SORT_OPTIONS: { value: SortKey; label: string }[] = [
 export function ShopGrid({
   products,
   initialSort = 'featured',
+  initialCollections = [],
 }: {
   products: Product[]
   initialSort?: SortKey
+  initialCollections?: CollectionSlug[]
 }) {
   const [sort, setSort] = useState<SortKey>(initialSort)
-  const [collections, setCollections] = useState<CollectionSlug[]>([])
+  const [collections, setCollections] = useState<CollectionSlug[]>(initialCollections)
   const [categories, setCategories] = useState<Product['category'][]>([])
   const [inStockOnly, setInStockOnly] = useState(false)
   const [filtersOpen, setFiltersOpen] = useState(false)

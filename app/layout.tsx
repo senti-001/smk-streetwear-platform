@@ -7,7 +7,7 @@ import { SiteHeader } from '@/components/layout/site-header'
 import { SiteFooter } from '@/components/layout/site-footer'
 import { CartDrawer } from '@/components/cart/cart-drawer'
 import { PromoPopup } from '@/components/marketing/promo-popup'
-
+import { ThemeProvider } from '@/components/theme-provider'
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
@@ -50,14 +50,21 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${anton.variable} bg-background`}>
       <body className="font-sans antialiased">
-        <CartProvider>
-          <SiteHeader />
-          <main className="min-h-screen">{children}</main>
-          <SiteFooter />
-          <CartDrawer />
-          <PromoPopup />
-        </CartProvider>
-        {process.env.NODE_ENV === 'production' && <Analytics />}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <CartProvider>
+            <SiteHeader />
+            <main className="min-h-screen">{children}</main>
+            <SiteFooter />
+            <CartDrawer />
+            <PromoPopup />
+          </CartProvider>
+          {process.env.NODE_ENV === 'production' && <Analytics />}
+        </ThemeProvider>
       </body>
     </html>
   )

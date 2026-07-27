@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import { Resend } from 'resend'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 
 const FROM_EMAIL = 'onboarding@resend.dev'
 const ADMIN_EMAIL = 'williamtflynn@gmail.com'
@@ -14,6 +14,11 @@ export async function POST(req: Request) {
 
     if (!email) {
       return NextResponse.json({ error: 'Email is required' }, { status: 400 })
+    }
+
+    if (!resend) {
+      console.warn('RESEND_API_KEY is not set. Skipping email send.')
+      return NextResponse.json({ success: true })
     }
 
     // ── 1. Admin notification ──────────────────────────────────────────────

@@ -18,3 +18,4 @@ node_modules
 # marketing-config.json is committed by the agent (intentional)
 lib/shopify-inventory-cache.json
 .agent-pr-body.md
+.vercel

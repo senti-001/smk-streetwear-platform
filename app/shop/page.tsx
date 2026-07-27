@@ -10,11 +10,12 @@ export const metadata: Metadata = {
 export default async function ShopPage({
   searchParams,
 }: {
-  searchParams: Promise<{ sort?: string }>
+  searchParams: Promise<{ sort?: string; collection?: string }>
 }) {
-  const { sort } = await searchParams
+  const { sort, collection } = await searchParams
   const initialSort =
     sort === 'new' ? 'new' : sort === 'price-asc' ? 'price-asc' : 'featured'
+  const initialCollections = collection ? [collection as any] : []
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-12">
@@ -26,7 +27,7 @@ export default async function ShopPage({
           Shop All
         </h1>
       </header>
-      <ShopGrid products={PRODUCTS} initialSort={initialSort} />
+      <ShopGrid products={PRODUCTS} initialSort={initialSort} initialCollections={initialCollections} />
     </div>
   )
 }
