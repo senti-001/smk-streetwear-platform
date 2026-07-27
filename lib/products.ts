@@ -320,6 +320,31 @@ export const PRODUCTS: Product[] = [
     inventory: 50,
     featured: true,
   },
+  {
+    id: 'p38',
+    slug: 'smk-949-fresh-tee',
+    name: 'SMK 949 Fresh Tee',
+    price: 45,
+    compareAtPrice: 60,
+    collection: 'new-drops',
+    category: 'Tops',
+    image: '/products/smk_949_fresh_3.png',
+    images: ['/products/smk_949_fresh_3.png'],
+    colors: ['White', 'Black'],
+    sizes: ['S', 'M', 'L', 'XL', '2XL'],
+    description:
+      'Fresh Orange County street style. The SMK 949 tee brings raw local energy with a clean, classic design.',
+    details: [
+      'Premium Heavyweight Cotton',
+      'Classic Street Fit',
+      'High-Resolution Graphic Print',
+      'Pre-Shrunk & Garment Washed',
+      'Designed in Orange County, CA',
+    ],
+    status: 'new',
+    inventory: 50,
+    featured: true,
+  },
 ]
 
 // ── Artwork gallery ──
