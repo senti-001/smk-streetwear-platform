@@ -46,32 +46,53 @@ function AnimatedStat({ value, label, suffix = '' }: { value: number; label: str
   )
 }
 
+const HERO_IMAGES = [
+  '/artwork/night-walk-pitbull.png',
+  '/artwork/smk_authentic_chill3.png',
+  '/artwork/smk_lifestyle_3_barcode.png',
+]
+
 export function Hero() {
   const [loaded, setLoaded] = useState(false)
+  const [currentSlide, setCurrentSlide] = useState(0)
 
   useEffect(() => {
     const t = setTimeout(() => setLoaded(true), 80)
     return () => clearTimeout(t)
   }, [])
 
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % HERO_IMAGES.length)
+    }, 7000)
+    return () => clearInterval(timer)
+  }, [])
+
   return (
     <section className="hero-root" aria-label="SMK Self Made King hero">
 
-      {/* ── Full-bleed background image ── */}
+      {/* ── Full-bleed background slideshow ── */}
       <div className="hero-bg-wrap">
-        <Image
-          src="/smk-moodboard.png"
-          alt="SMK Self Made King brand moodboard"
-          fill
-          priority
-          sizes="100vw"
-          className="hero-bg-img"
-          onLoad={() => setLoaded(true)}
-        />
+        {HERO_IMAGES.map((src, index) => (
+          <div
+            key={src}
+            className={`hero-slide ${index === currentSlide ? 'active' : ''}`}
+            style={{ zIndex: index === currentSlide ? 1 : 0 }}
+          >
+            <Image
+              src={src}
+              alt="SMK Self Made King lifestyle background"
+              fill
+              priority={index === 0}
+              sizes="100vw"
+              className="hero-bg-img"
+            />
+          </div>
+        ))}
         {/* Dark overlay gradient — heavier at bottom for text legibility */}
-        <div className="hero-overlay" />
+        <div className="hero-overlay" style={{ zIndex: 2 }} />
         {/* Subtle grain */}
-        <div className="hero-grain" aria-hidden />
+        <div className="hero-grain" style={{ zIndex: 2 }} aria-hidden />
       </div>
 
       {/* ── Content ── */}
