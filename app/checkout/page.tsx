@@ -17,7 +17,8 @@ export default function CheckoutPage() {
   const { lines, subtotal } = useCart()
   const [loading, setLoading] = useState(false)
   
-  const shipping = subtotal >= 150 || subtotal === 0 ? 0 : 8
+  const hasTestSticker = lines.some(line => line.product.slug === 'smk-test-sticker')
+  const shipping = hasTestSticker || subtotal >= 150 || subtotal === 0 ? 0 : 8
   const tax = Math.round(subtotal * 0.0775 * 100) / 100
   const total = subtotal + shipping + tax
 
