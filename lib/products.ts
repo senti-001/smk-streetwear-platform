@@ -205,29 +205,6 @@ export const PRODUCTS: Product[] = [
 
 
   {
-    id: 'p31',
-    slug: 'smk-splatter-tee',
-    name: 'SMK Splatter Tee',
-    price: 55,
-    collection: 'new-drops',
-    category: 'Tops',
-    image: '/products/Gemini_Generated_Image_maa116maa116maa1.png',
-    images: ['/products/Gemini_Generated_Image_maa116maa116maa1.png'],
-    colors: ['White'],
-    sizes: ['S', 'M', 'L', 'XL', '2XL'],
-    description:
-      'Raw energy. Features a paint splatter SMK chest logo, vertical SELF MADE KING sleeve text, and the signature broken heart crown on the back neck.',
-    details: [
-      'Printed on Gildan Heavy Cotton blanks',
-      'Classic street fit',
-      'High-density graphic prints',
-      'Garment-dyed',
-    ],
-    status: 'new',
-    inventory: 50,
-    featured: true,
-  },
-  {
     id: 'p33',
     slug: '949-stealth-hoodie',
     name: '949 Stealth Hoodie',
