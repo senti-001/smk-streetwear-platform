@@ -39,9 +39,8 @@ export async function POST(req: Request) {
       0
     )
 
-    const hasTestSticker = items.some((item: any) => item.product.slug === 'smk-test-sticker')
-    // Shipping fee: $8 if subtotal < $150, else Free (or if test sticker is in cart)
-    const shippingCost = hasTestSticker || subtotal >= 150 ? 0 : 800 // in cents
+    // Shipping fee: $8 if subtotal < $150, else Free
+    const shippingCost = subtotal >= 150 ? 0 : 800 // in cents
 
     // Create Checkout Sessions from body params.
     const sessionParams: Stripe.Checkout.SessionCreateParams = {

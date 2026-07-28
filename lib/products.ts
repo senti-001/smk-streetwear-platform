@@ -322,29 +322,6 @@ export const PRODUCTS: Product[] = [
     inventory: 50,
     featured: true,
   },
-  {
-    id: 'p39',
-    slug: 'smk-test-sticker',
-    name: 'SMK Test Sticker',
-    price: 1,
-    compareAtPrice: 5,
-    collection: 'new-drops',
-    category: 'Headwear',
-    image: '/products/smk-smoke-stacks-tee.png',
-    images: ['/products/smk-smoke-stacks-tee.png'],
-    colors: ['Black'],
-    sizes: ['S', 'M', 'L', 'XL', '2XL'],
-    description:
-      'A cheap $1 sticker for end-to-end testing of the SMK store and Stripe payment gateway checkout process. Sizes emulate standard T-shirt sizes.',
-    details: [
-      'Dimensions: 3" x 3"',
-      'Premium vinyl sticker material',
-      'For testing purposes only',
-    ],
-    status: 'new',
-    inventory: 999,
-    featured: true,
-  },
 ]
 
 // ── Artwork gallery ──
