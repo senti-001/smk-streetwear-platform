@@ -1,5 +1,6 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useCart } from '@/components/cart/cart-provider'
@@ -18,6 +19,19 @@ export function ProductCard({ product }: { product: Product }) {
   const badge = STATUS_LABEL[product.status]
   const soldOut = product.status === 'sold-out'
 
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+
+  useEffect(() => {
+    if (product.images && product.images.length > 1) {
+      const interval = setInterval(() => {
+        setCurrentImageIndex((prev) => (prev + 1) % product.images.length)
+      }, 2000)
+      return () => clearInterval(interval)
+    }
+  }, [product.images])
+
+  const currentImage = product.images?.length > 0 ? product.images[currentImageIndex] : (product.image || '/placeholder.svg')
+
   return (
     <div className="group relative flex flex-col">
       <Link
@@ -25,7 +39,7 @@ export function ProductCard({ product }: { product: Product }) {
         className="relative aspect-[4/5] overflow-hidden rounded-sm bg-muted"
       >
         <Image
-          src={product.image || '/placeholder.svg'}
+          src={currentImage}
           alt={product.name}
           fill
           sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
