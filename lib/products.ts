@@ -322,6 +322,31 @@ export const PRODUCTS: Product[] = [
     inventory: 50,
     featured: true,
   },
+  {
+    id: 'p39',
+    slug: '949-star-shield-tee',
+    name: '949 Star Shield Tee',
+    price: 55,
+    compareAtPrice: 75,
+    collection: 'new-drops',
+    category: 'Tops',
+    image: '/products/949-star-shield-tee.png',
+    images: ['/products/949-star-shield-tee.png'],
+    colors: ['Black'],
+    sizes: ['L', 'XL', '2XL', '3XL'],
+    description:
+      'The 949 Star Shield Tee. Featuring a clean front SMK logo, with a bold 949 gothic back print and 7-star arc. Finished with a crown embroidered sleeve detail.',
+    details: [
+      '100% Cotton',
+      '250 GSM Heavyweight Fabric',
+      'Oversized Street Fit',
+      'High-Quality Screen Print + Embroidery',
+      'Gothic Hem Branding',
+    ],
+    status: 'new',
+    inventory: 50,
+    featured: true,
+  },
 ]
 
 // ── Artwork gallery ──
